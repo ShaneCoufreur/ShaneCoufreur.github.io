@@ -42,7 +42,7 @@
   function initAjaxContactForm() {
     if ($('#contactForm, #hireForm').length > 0) {
       $('#contactForm, #hireForm').validate();
-      $('#contactForm, #hireForm').submit(function() {
+      $('#hireForm').submit(function() {
         var el = $(this);
         if (el.valid()) {
           var params = $(this).serialize();
