@@ -14,7 +14,7 @@
     initBtnFile();
     initMap();
     initHold();
-    initCaptcha();
+    // initCaptcha();
     initAjaxContactForm();
     initAjaxUploader();
   });
@@ -147,21 +147,21 @@
   }
 
   //captcha configuration
-  function initCaptcha() {
-    $('#mycaptcha').simpleCaptcha({
-      allowRefresh: false,
-      scriptPath: "assets/plugins/simpleCaptcha/simpleCaptcha.php"
-    });
+  // function initCaptcha() {
+  //   $('#mycaptcha').simpleCaptcha({
+  //     allowRefresh: false,
+  //     scriptPath: "assets/plugins/simpleCaptcha/simpleCaptcha.php"
+  //   });
 
-    $('#mycaptcha').bind('ready.simpleCaptcha', function(hashSelected) {
-      $('#captcha1,#captcha2').html($('#mycaptcha-wrap').html()).find('.mycaptcha1').removeAttr('id');
-      $('#captcha1,#captcha2').find('.captchaImages img.captchaImage').click(function() {
-        $('#captcha1,#captcha2').find('.captchaImages img.captchaImage').removeClass('simpleCaptchaSelected');
-        $(this).addClass('simpleCaptchaSelected');
-        $('.simpleCaptchaInput').val($(this).data('hash'));
-      });
-    });
-  }
+  //   $('#mycaptcha').bind('ready.simpleCaptcha', function(hashSelected) {
+  //     $('#captcha1,#captcha2').html($('#mycaptcha-wrap').html()).find('.mycaptcha1').removeAttr('id');
+  //     $('#captcha1,#captcha2').find('.captchaImages img.captchaImage').click(function() {
+  //       $('#captcha1,#captcha2').find('.captchaImages img.captchaImage').removeClass('simpleCaptchaSelected');
+  //       $(this).addClass('simpleCaptchaSelected');
+  //       $('.simpleCaptchaInput').val($(this).data('hash'));
+  //     });
+  //   });
+  // }
 
   //Typed Animation
   function initTyped() {
