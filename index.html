@@ -209,7 +209,7 @@
           <div class="list-employment" id="employment">
             <ul class="list-unstyled  clearfix">
             <!-- ko foreach: Employment -->
-			  <li>
+			        <li data-bind="attr: { id: id }">
                 <div class="ic"><i class="fa fa-briefcase"></i></div>
                 <div class="number font-alt">
 	                <!-- ko if: $index() <= 8 -->
@@ -221,7 +221,13 @@
                 </div>
                 <div class="desc">
                   <h5 class="text-uppercase color-dark text-bold" data-bind="text: title"></h5>
-                  <p class="font-alt color-dark" data-bind="text: employer"></p>
+                  <p class="font-alt color-dark">
+                    <!-- ko text: employer -->
+                    <!-- /ko -->
+                    <!-- ko if: via_link_id().length > 0 -->
+                    (<a data-bind="attr: { href: via_link_id }"><!--ko text: via_link_text --> <!-- /ko --></a>)
+                    <!-- /ko -->
+                  </p>
                   <!-- ko if: description -->
                   	<p data-bind="text: description"></p> 
                   <!-- /ko -->
